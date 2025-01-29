@@ -4,11 +4,11 @@ using namespace std;
 int queue[max];
 int front=-1,rear=-1;
 void enqueue(int data){
-    if(rear==max-1){
+    if(rear == max-1){
         cout<<"Queue is overflow.\n";
         return;
     }
-    if (front==-1){
+    if (front == -1){
         front=0;
     }
     rear=rear+1;
@@ -16,18 +16,19 @@ void enqueue(int data){
     cout<<data<<" added.\n";
 }
 void dequeue(){
-    if (front=-1){
+    if (front == -1){
         cout<<"Queue is underflow.\n";
         return;
     }
-    int data=queue[front];
-    cout<<data<<" removed.\n";
-    if (front>rear){
-        front=-1;
-        rear=-1;
-    }else{
-        front=front+1;
+    else{
+    	cout<<queue[front]<<" removed.\n";
+    	front=front+1;
+    	if (front >= rear){
+	        front=-1;
+	        rear=-1;
+    	}       
     }
+    
 }
 int main(){
     int choice,data;
